@@ -1,7 +1,7 @@
 /*
 Error: Undefined variable: "$gray-200".
-        on line 5 of C:/Users/Dresdain/Documents/GitHub/smsProject/scss/core/_variables.scss
-        from line 2 of C:\Users\Dresdain\Documents\GitHub\smsProject\scss\core\core.scss
+        on line 5 of C:/Users/Dresdain/Documents/GitHub/ascentdigital.github.io/scss/core/_variables.scss
+        from line 2 of C:\Users\Dresdain\Documents\GitHub\ascentdigital.github.io\scss\core\core.scss
 
 1: // Import core styles
 2: @import "variables";
@@ -15,8 +15,8 @@ Error: Undefined variable: "$gray-200".
 10: 
 
 Backtrace:
-C:/Users/Dresdain/Documents/GitHub/smsProject/scss/core/_variables.scss:5
-C:\Users\Dresdain\Documents\GitHub\smsProject\scss\core\core.scss:2
+C:/Users/Dresdain/Documents/GitHub/ascentdigital.github.io/scss/core/_variables.scss:5
+C:\Users\Dresdain\Documents\GitHub\ascentdigital.github.io\scss\core\core.scss:2
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/script/tree/variable.rb:49:in `_perform'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/script/tree/node.rb:58:in `perform'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:471:in `visit_variable'
@@ -65,4 +65,4 @@ C:/Program Files (x86)/Koala/bin/sass:18:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$gray-200\".\A         on line 5 of C:/Users/Dresdain/Documents/GitHub/smsProject/scss/core/_variables.scss\A         from line 2 of C:\Users\Dresdain\Documents\GitHub\smsProject\scss\core\core.scss\A \A 1: // Import core styles\A 2: @import \"variables\";\A 3: @import \"mixins\";\A 4: \A 5: // Additional typography\A 6: @import \"typography\";\A 7: \A 8: // Animations\A 9: @import \"animate\";\A 10: "; }
+  content: "Error: Undefined variable: \"$gray-200\".\A         on line 5 of C:/Users/Dresdain/Documents/GitHub/ascentdigital.github.io/scss/core/_variables.scss\A         from line 2 of C:\Users\Dresdain\Documents\GitHub\ascentdigital.github.io\scss\core\core.scss\A \A 1: // Import core styles\A 2: @import \"variables\";\A 3: @import \"mixins\";\A 4: \A 5: // Additional typography\A 6: @import \"typography\";\A 7: \A 8: // Animations\A 9: @import \"animate\";\A 10: "; }

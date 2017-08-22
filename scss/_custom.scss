@@ -3,3 +3,10 @@
 	background-image: url('../img/bg/bg1.jpg');
 	background-size: cover;
 }
+
+.card{
+	.preview{
+		padding: 1.25rem 1.25rem 1rem 1.25rem;
+		background: rgba(0,0,0,0.05);
+	}
+}

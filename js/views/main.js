@@ -17,7 +17,7 @@ $(function(){
         labels: labels,
         datasets: [
             {
-                label: 'My First dataset',
+                label: 'Subscribers',
                 backgroundColor: $.brandPrimary,
                 borderColor: 'rgba(255,255,255,.55)',
                 data: [65, 59, 84, 84, 51, 55, 40]
@@ -72,7 +72,7 @@ $(function(){
         labels: labels,
         datasets: [
             {
-                label: 'My First dataset',
+                label: 'SMS Sent',
                 backgroundColor: $.brandInfo,
                 borderColor: 'rgba(255,255,255,.55)',
                 data: [1, 18, 9, 17, 34, 22, 11]
@@ -152,7 +152,7 @@ $(function(){
         labels: labels,
         datasets: [
             {
-                label: 'My First dataset',
+                label: 'Clicks',
                 backgroundColor: 'rgba(255,255,255,.2)',
                 borderColor: 'rgba(255,255,255,.55)',
                 data: [78, 81, 80, 45, 34, 12, 40]
@@ -213,85 +213,9 @@ $(function(){
         options: options
     });
 
-    //Main Chart
-    var elements = 27;
-    var data1 = [];
-    var data2 = [];
-    var data3 = [];
-
-    for (var i = 0; i <= elements; i++) {
-        data1.push(random(50,200));
-        data2.push(random(80,100));
-        data3.push(65);
-    }
-
-    var data = {
-        labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S'],
-        datasets: [
-            {
-                label: 'My First dataset',
-                backgroundColor: convertHex($.brandInfo,10),
-                borderColor: $.brandInfo,
-                pointHoverBackgroundColor: '#fff',
-                borderWidth: 2,
-                data: data1
-            },
-            {
-                label: 'My Second dataset',
-                backgroundColor: 'transparent',
-                borderColor: $.brandSuccess,
-                pointHoverBackgroundColor: '#fff',
-                borderWidth: 2,
-                data: data2
-            },
-            {
-                label: 'My Third dataset',
-                backgroundColor: 'transparent',
-                borderColor: $.brandDanger,
-                pointHoverBackgroundColor: '#fff',
-                borderWidth: 1,
-                borderDash: [8, 5],
-                data: data3
-            }
-        ]
-    };
-
-    var options = {
-        responsive: true,
-        maintainAspectRatio: false,
-        legend: {
-            display: false
-        },
-        scales: {
-            xAxes: [{
-                gridLines: {
-                    drawOnChartArea: false,
-                }
-            }],
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true,
-                    maxTicksLimit: 5,
-                    stepSize: Math.ceil(250 / 5),
-                    max: 250
-                }
-            }]
-        },
-        elements: {
-            point: {
-                radius: 0,
-                hitRadius: 10,
-                hoverRadius: 4,
-                hoverBorderWidth: 3,
-            }
-        },
-    };
-    var ctx = $('#main-chart');
-    var mainChart = new Chart(ctx, {
-        type: 'line',
-        data: data,
-        options: options
-    });
+ 
+ 
+ 
 
 
     //Social Box Charts
@@ -530,4 +454,201 @@ $(function(){
         options: options
     });
 
+});
+
+$(function (){
+  'use strict';
+
+  var randomScalingFactor = function(){ return Math.round(Math.random()*50)};
+  var lineChartData = {
+    labels : ['February','March','April','May','June','July','August'],
+    datasets : [
+      {
+        label: 'Opt-Outs',
+        backgroundColor : 'rgba(230,47,83,0.2)',
+        borderColor : 'rgba(230,47,83,1)',
+        pointBackgroundColor : 'rgba(230,47,83,1)',
+        pointBorderColor : 'rgba(230,47,83,1)',
+        data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+      },
+      {
+        label: 'Opt-Ins',
+        backgroundColor : 'rgba(61,188,110,0.2)',
+        borderColor : 'rgba(61,188,110,1)',
+        pointBackgroundColor : 'rgba(61,188,110,1)',
+        pointBorderColor : 'rgba(61,188,110,1)',
+        data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+      }
+    ]
+  }
+
+  var ctx = document.getElementById('canvas-1');
+  var chart = new Chart(ctx, {
+    type: 'line',
+    data: lineChartData,
+    options: {
+      responsive: true
+    }
+  }); 
+
+
+  var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+  var barChartData = {
+    labels : ['January','February','March','April','May','June','July'],
+    datasets : [
+      {
+        backgroundColor : 'rgba(220,220,220,0.5)',
+        borderColor : 'rgba(220,220,220,0.8)',
+        highlightFill: 'rgba(220,220,220,0.75)',
+        highlightStroke: 'rgba(220,220,220,1)',
+        data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+      },
+      {
+        backgroundColor : 'rgba(151,187,205,0.5)',
+        borderColor : 'rgba(151,187,205,0.8)',
+        highlightFill : 'rgba(151,187,205,0.75)',
+        highlightStroke : 'rgba(151,187,205,1)',
+        data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+      }
+    ]
+  }
+  var ctx = document.getElementById('canvas-2');
+  var chart = new Chart(ctx, {
+    type: 'bar',
+    data: barChartData,
+    options: {
+      responsive: true
+    }
+  });
+
+
+  var doughnutData = {
+    labels: [
+      'Red',
+      'Green',
+      'Yellow'
+    ],
+    datasets: [{
+      data: [300, 50, 100],
+      backgroundColor: [
+        '#FF6384',
+        '#36A2EB',
+        '#FFCE56'
+      ],
+      hoverBackgroundColor: [
+        '#FF6384',
+        '#36A2EB',
+        '#FFCE56'
+      ]
+    }]
+  };
+  var ctx = document.getElementById('canvas-3');
+  var chart = new Chart(ctx, {
+    type: 'doughnut',
+    data: doughnutData,
+    options: {
+      responsive: true
+    }
+  });
+
+
+  var radarChartData = {
+    labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
+    datasets: [
+      {
+        label: 'My First dataset',
+        backgroundColor: 'rgba(220,220,220,0.2)',
+        borderColor: 'rgba(220,220,220,1)',
+        pointBackgroundColor: 'rgba(220,220,220,1)',
+        pointBorderColor: '#fff',
+        pointHighlightFill: '#fff',
+        pointHighlightStroke: 'rgba(220,220,220,1)',
+        data: [65,59,90,81,56,55,40]
+      },
+      {
+        label: 'My Second dataset',
+        backgroundColor: 'rgba(151,187,205,0.2)',
+        borderColor: 'rgba(151,187,205,1)',
+        pointBackgroundColor: 'rgba(151,187,205,1)',
+        pointBorderColor: '#fff',
+        pointHighlightFill: '#fff',
+        pointHighlightStroke: 'rgba(151,187,205,1)',
+        data: [28,48,40,19,96,27,100]
+      }
+    ]
+  };
+  var ctx = document.getElementById('canvas-4');
+  var chart = new Chart(ctx, {
+    type: 'radar',
+    data: radarChartData,
+    options: {
+      responsive: true
+    }
+  });
+
+
+  var pieData = {
+    labels: [
+      'Red',
+      'Green',
+      'Yellow'
+    ],
+    datasets: [{
+      data: [300, 50, 100],
+      backgroundColor: [
+        '#FF6384',
+        '#36A2EB',
+        '#FFCE56'
+      ],
+      hoverBackgroundColor: [
+        '#FF6384',
+        '#36A2EB',
+        '#FFCE56'
+      ]
+    }]
+  };
+  var ctx = document.getElementById('canvas-5');
+  var chart = new Chart(ctx, {
+    type: 'pie',
+    data: pieData,
+    options: {
+      responsive: true
+    }
+  });
+
+
+  var polarData = {
+    datasets: [{
+      data: [
+        11,
+        16,
+        7,
+        3,
+        14
+      ],
+      backgroundColor: [
+        '#FF6384',
+        '#4BC0C0',
+        '#FFCE56',
+        '#E7E9ED',
+        '#36A2EB'
+      ],
+      label: 'My dataset' // for legend
+    }],
+    labels: [
+      'Red',
+      'Green',
+      'Yellow',
+      'Grey',
+      'Blue'
+    ]
+  };
+  var ctx = document.getElementById('canvas-6');
+  var chart = new Chart(ctx, {
+    type: 'polarArea',
+    data: polarData,
+    options: {
+      responsive: true
+    }
+  });
 });
