@@ -8,7 +8,7 @@
   $.panelIconClosed = 'icon-arrow-down';
 
   //Default colours
-  $.brandPrimary =  '#20a8d8';
+  $.brandPrimary =  '#CE9FFC';
   $.brandSuccess =  '#4dbd74';
   $.brandInfo =     '#63c2de';
   $.brandWarning =  '#f8cb00';
@@ -20,8 +20,7 @@
   $.grayLighter =   '#d1d4d7';
   $.grayLightest =  '#f8f9fa';
 
-'use strict';
-
+'use strict'; 
 /****
 * MAIN NAVIGATION
 */

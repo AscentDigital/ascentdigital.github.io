@@ -44,12 +44,12 @@
   }
 }
 
-@each $color, $value in $theme-colors {
-  &.callout-#{$color} {
-    border-left-color: $value;
+// @each $color, $value in $theme-colors {
+//   &.callout-#{$color} {
+//     border-left-color: $value;
 
-    h4 {
-      color: $value;
-    }
-  }
-}
+//     h4 {
+//       color: $value;
+//     }
+//   }
+// }
