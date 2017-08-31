@@ -9219,4 +9219,26 @@ hr.transparent {
   padding: 1.25rem 1.25rem 1rem 1.25rem;
   background: rgba(0, 0, 0, 0.05); }
 
+.message-card {
+  background: #F9F9F9; }
+  .message-card .message-table tbody tr td:last-child {
+    text-align: right; }
+
+.message-send textarea {
+  margin-top: 10px; }
+.message-send .subscriber-list tbody tr:hover,
+.message-send .subscriber-individual tbody tr:hover {
+  cursor: pointer; }
+.message-send .tab-content {
+  margin-top: -1px;
+  background: #fff;
+  border: 0px solid #7367F0; }
+.message-send .tab-content .tab-pane {
+  padding: 0px; }
+.message-send .subscriber-individual tbody tr td:nth-child(3) {
+  text-align: right; }
+
+.border-primary {
+  border: 1px solid #7367F0; }
+
 /*# sourceMappingURL=style.css.map */
