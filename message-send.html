@@ -111,7 +111,7 @@
             <div class="container-fluid"> 
                 <div class="animated fadeIn">
                      <div class="row">
-                         <div class="col-md-6"> 
+                         <div class="col-md-7"> 
                              <div class="card message-card message-send">
                                 <div class="card-header bg-primary">
                                     <i class="fa fa-envelope"></i> Create Message
@@ -134,16 +134,16 @@
                                         <div class="row">
                                             <div class="col-md-9">
                                                 <label for="message" class="lead header-title"><i class="fa fa-commenting"></i> <b>PrEP Advisory:</b></label>  
-                                                <input type="text" class="form-control header-input" id="name" placeholder="Enter Header" style="display: none;">
+                                                <input type="text" class="form-control header-input" id="name" placeholder="Enter Header" value="PrEP Advisory:" style="display: none;">
                                                 <span class="text-muted header-notice" placeholder="PrEP Advisory:" style="display: none;">Your message header must clearly indicate <b>who is sending the message</b>. You may not use the message header for any other purpose.</span>
                                             </div>
                                             <div class="col-md-3 text-right">
-                                                <button type="button" id="change-header" class="btn btn-xs btn-outline-primary">Change Header</button> 
-                                                <button type="button" id="apply-header" class="btn btn-xs btn-outline-success" style="display: none;">Apply Changes</button> 
+                                                <button type="button" id="change-header" class="btn btn-xs btn-outline-primary" tabindex="1">Change Header</button> 
+                                                <button type="button" id="apply-header" class="btn btn-xs btn-outline-success" tabindex="2" style="display: none;">Apply Changes</button> 
                                             </div>
                                         </div>  
                                         <textarea class="form-control" id="message" rows="4" style="resize: vertical;" placeholder="Type your message here"></textarea>
-                                        <small class="pull-left">0/160</small> 
+                                        <small class="pull-left"><span class="counting-text">15</span>/160</small> 
                                     </div><br>
 
                                     <div class="form-group">
@@ -228,6 +228,20 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                        <tr>
+                                                           <td colspan="4">
+                                                               <div class="form-group row" style="margin-bottom: 0px;">
+                                                                <div class="col-md-12">
+                                                                    <div class="input-group"> 
+                                                                        <input type="text" id="search-messages" name="search-messages" class="form-control" placeholder="Search subscribers...">
+                                                                        <span class="input-group-btn">
+                                                                            <button type="button" class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div> 
+                                                           </td> 
+                                                        </tr>
                                                         <tr data-trigger="sub-ind-1">
                                                             <td>
                                                                 <input type="checkbox" id="checkbox1" name="sub-ind-1" value="sub-ind-1">  
@@ -285,12 +299,38 @@
                                         </div>  
                                  </div> 
                                 <div class="card-footer text-muted">
-                                    You have sent a total of 5 messages to 450,00 recipients for this month.
+                                    This message will be sent to a total of <b>13,010</b> recipients.
                                 </div>
                             </div>
                          </div>
-                         <div class="col-md-6 col-lg-6">
-                            
+                         <div class="col-md-5 col-lg-5">
+                             <div class="card">
+                                <div class="card-header">
+                                    Preview
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <p class="lead text-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis rerum non a provident soluta eius magnam natus, dolores mollitia molestias nemo sint repellat, laudantium numquam expedita adipisci reiciendis! Iure, repellendus!</p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <div class="input-group input-group-lg"> 
+                                                <input type="text" id="input3-group2" name="input3-group2" class="form-control" placeholder="Click send message to confirm" disabled="">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-primary"><i class="fa fa-send-o"></i> Send Message
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                               
                          </div>
                      </div>
@@ -341,7 +381,21 @@
 
     <!-- Custom scripts required by this view -->
     <script>
+        function countingText(){
+            var body = $('#message').val();
+            var head = $('.header-input').val();
+            var total = head.length + body.length; 
+            var stringTxt = head + body;
+            if(total > 160){
+                $('.counting-text').addClass('text-danger');
+            }else{
+                $('.counting-text').removeClass('text-danger');
+            }
+            $('.text-preview').text(stringTxt);
+            $('.counting-text').text(total);
+        } 
         $(function(){
+            countingText();
             $('.subscriber-list tbody tr, .subscriber-individual tbody tr').on('click', function(){ 
                 var d = $(this).data('trigger');
                 $('[name="'+d+'"]').trigger('click');
@@ -359,6 +413,7 @@
                 $('.header-notice').show(); 
             });
             $('#apply-header').on('click', function(){
+                countingText();
                 $(this).hide();
                 var title = $('.header-input').val();
                 $('#change-header').show();
@@ -367,7 +422,12 @@
                 $('.header-title b').show().text(title);
                 $('.header-notice').hide(); 
             });
+            $('.header-input, #message').on('keypress blur',function(){
+                countingText();
+            });
         });
+
+
 
     </script>
 
