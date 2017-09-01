@@ -1476,7 +1476,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   padding: 0.5rem 0.75rem;
   font-size: 0.875rem;
   line-height: 1.25;
-  transition: all 0.15s ease-in-out; }
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   .btn:focus, .btn:hover {
     text-decoration: none; }
   .btn:focus, .btn.focus {
@@ -1833,6 +1833,8 @@ input[type="button"].btn-block {
   opacity: 0;
   transition: opacity 0.15s linear; }
   .fade.show {
+    opacity: 1; }
+  .fade.in {
     opacity: 1; }
 
 .collapse {
@@ -3162,7 +3164,7 @@ button.close {
   outline: 0; }
   .modal.fade .modal-dialog {
     transition: transform 0.3s ease-out;
-    transform: translate(0, -25%); }
+    transform: translate(0, 5%); }
   .modal.show .modal-dialog {
     transform: translate(0, 0); }
 
@@ -3173,12 +3175,14 @@ button.close {
 .modal-dialog {
   position: relative;
   width: auto;
-  margin: 10px; }
+  margin: 10px;
+  pointer-events: none; }
 
 .modal-content {
   position: relative;
   display: flex;
   flex-direction: column;
+  pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -3193,7 +3197,7 @@ button.close {
   z-index: 1040;
   background-color: #000; }
   .modal-backdrop.fade {
-    opacity: 0; }
+    opacity: 0.5; }
   .modal-backdrop.show {
     opacity: 0.5; }
 
@@ -3203,6 +3207,8 @@ button.close {
   justify-content: space-between;
   padding: 15px;
   border-bottom: 1px solid #c2cfd6; }
+  .modal-header .close {
+    margin-left: auto; }
 
 .modal-title {
   margin-bottom: 0;
